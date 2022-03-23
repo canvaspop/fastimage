@@ -225,10 +225,10 @@ class FastImage
         $response = null;
 
         // do we need more data?
-        if ($this->strpos + $n - 1 >= strlen($this->str)) {
+        if ($this->strpos + $n - 1 >= strlen((string)$this->str)) {
             $end = ($this->strpos + $n);
 
-            while (strlen($this->str) < $end && $response !== false) {
+            while (strlen((string)$this->str) < $end && $response !== false) {
                 // read more from the file handle
                 $need = $end - ftell($this->handle);
 
